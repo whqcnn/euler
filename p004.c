@@ -22,12 +22,12 @@ int main(void)
             if (hw(i * j))
             {
                 mul = i * j;
-                  if (hws <= mul)
-                    {
-                        hws = mul;
-                        i1 = i;
-                        j1 = j;
-                    }
+                if (hws <= mul)
+                {
+                    hws = mul;
+                    i1 = i;
+                    j1 = j;
+                }
                 break;
             }
         }
