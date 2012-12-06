@@ -13,7 +13,7 @@ int main()
         {
             c = (S-a-b);
             if ((a*a + b*b) == (c*c))
-                printf("a: %d b: %d c: %d\n", a, b, c);
+                printf("sum: %d a: %d b: %d c: %d\n", (a*b*c), a, b, c);
         }
     }
 }
