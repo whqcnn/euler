@@ -12,6 +12,24 @@ int get_triangle_number(int n)
     return sum;
 }
 
+int get_divisors_number(int n)
+{
+    int count = 0;
+    int j;
+
+    for (j = 1; (j * j) <= n; j++)
+    {
+        if (n % j == 0)
+        {
+            count++;
+        }
+    }
+
+    if ((j-1)*(j-1) == n)
+        return (2*count-1);
+    return (2*count);
+}
+
 int main()
 {
     int number = 1;
@@ -19,21 +37,14 @@ int main()
     int result;
     while(1)
     {
-        count = 1;
         result = get_triangle_number(number);
-        for (int j = 1; (j * j) <= result; j++)
+        count = get_divisors_number(result);
+
+        if (count > 500)
         {
-            if (result % j == 0)
-            {
-                count++;
-            }
+            break;
         }
         number++;
-        if (number % 100 == 0)
-            printf("%d - %d -%d\n", number, result, count);
-
-        if (2 * count > 500)
-            break;
     }
 
     printf("result: %d\n", result);
